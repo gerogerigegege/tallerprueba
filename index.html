@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - ejemplo taller</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1;
+    }
+
+    .word {
+      position: absolute;
+      display: inline-block;
+      color: white;
+      animation: animateWord 4s linear infinite;
+    }
+
+    @keyframes animateWord {
+      0% {
+        top: 0;
+        left: 0;
+      }
+      25% {
+        top: 0;
+        left: calc(100% - 100px);
+      }
+      50% {
+        top: calc(100% - 40px);
+        left: calc(100% - 100px);
+      }
+      75% {
+        top: calc(100% - 40px);
+        left: 0;
+      }
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://i.ibb.co/vXFn6RV/974e79cb7060cc6854843a122370e3bb.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="word">no lograrás 🥴</span>
+    <span class="word">otro tipo 🤖</span>
+    <span class="word">de 👾</span>
+    <span class="word">consciencia 🦷</span>
+  </div>
+
+  <div class="background"></div>
+
+  <script>
+    const words = document.querySelectorAll('.word');
+    words.forEach((word, index) => {
+      const delay = index * 0.2;
+      word.style.animationDelay = `${delay}s`;
+    });
+  </script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
